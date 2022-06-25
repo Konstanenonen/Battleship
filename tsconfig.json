@@ -9,7 +9,5 @@
     "allowJs": true,
     "moduleResolution": "node",
     "esModuleInterop": true
-  },
-  "include": [".ts", ".tsx"],
-  "exclude": ["node_modules"]
+  }
 }
