@@ -3,15 +3,28 @@ import View from "./modules/view";
 import createPlayer from "./modules/createPlayer";
 import createComputerPlayer from "./modules/createComputerPlayer";
 
-const humanPlayer = createPlayer("Human");
-const computerPlayer = createComputerPlayer();
-console.log(humanPlayer);
-console.log(computerPlayer);
+const player = createPlayer("Human");
+const computer = createComputerPlayer();
 
-View.renderPlayerBoard(humanPlayer.gameboard.state);
-View.createComputerBoard();
+const gameLoop = () => {
+  const computerTiles = document.querySelectorAll(".computer-tile");
+  computerTiles.forEach((tile, index) => {
+    tile.addEventListener("click", () => {
+      const coordinates = player.changeToCoordinates(index);
+      computer.gameboard.receiveAttack(coordinates[0], coordinates[1]);
+      View.renderComputerBoard(computer.gameboard.state);
 
-let gameOver = false;
-while (!gameOver) {
-  gameOver = true;
-}
+      const computerCoordinates = computer.giveCoordinates();
+      player.gameboard.receiveAttack(
+        computerCoordinates[0],
+        computerCoordinates[1]
+      );
+      View.renderPlayerBoard(player.gameboard.state);
+      gameLoop();
+    });
+  });
+};
+
+View.renderPlayerBoard(player.gameboard.state);
+View.renderComputerBoard(computer.gameboard.state);
+gameLoop();

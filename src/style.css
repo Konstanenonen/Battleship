@@ -2,10 +2,10 @@ h1 {
   color: green;
 }
 
-.gameboards {
+body {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 100px;
 }
 
 .player-board {
@@ -23,6 +23,17 @@ h1 {
 
 .boat-tile {
   background-color: black;
+  border: 1px solid black;
+}
+
+.miss {
+  background-color: blue;
+  border: 1px solid black;
+}
+
+.hit {
+  background-color: red;
+  border: 1px solid black;
 }
 
 .computer-board {
