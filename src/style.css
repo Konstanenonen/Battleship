@@ -22,16 +22,22 @@ body {
 }
 
 .boat-tile {
+  width: 20px;
+  height: 20px;
   background-color: black;
   border: 1px solid black;
 }
 
 .miss {
+  width: 20px;
+  height: 20px;
   background-color: blue;
   border: 1px solid black;
 }
 
 .hit {
+  width: 20px;
+  height: 20px;
   background-color: red;
   border: 1px solid black;
 }

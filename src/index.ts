@@ -13,6 +13,9 @@ const gameLoop = () => {
       const coordinates = player.changeToCoordinates(index);
       computer.gameboard.receiveAttack(coordinates[0], coordinates[1]);
       View.renderComputerBoard(computer.gameboard.state);
+      if (computer.gameboard.allShipsSunk()) {
+        console.log("Human wins!");
+      }
 
       const computerCoordinates = computer.giveCoordinates();
       player.gameboard.receiveAttack(
@@ -20,6 +23,10 @@ const gameLoop = () => {
         computerCoordinates[1]
       );
       View.renderPlayerBoard(player.gameboard.state);
+      if (player.gameboard.allShipsSunk()) {
+        console.log("Computer wins!");
+      }
+
       gameLoop();
     });
   });
