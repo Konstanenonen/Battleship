@@ -8,7 +8,7 @@ const shipFactory = (length: number) => {
   const isSunk = () => !hitPositions.includes(false);
 
   return {
-    length,
+    length: hitPositions.length,
     hitPositions,
     hit,
     isSunk,
