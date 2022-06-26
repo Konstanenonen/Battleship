@@ -1,4 +1,4 @@
-const shipFactory = (length: number) => {
+const createShip = (length: number) => {
   const hitPositions = Array.from(Array(length)).map(() => false);
 
   const hit = (position: number) => {
@@ -15,4 +15,4 @@ const shipFactory = (length: number) => {
   };
 };
 
-export default shipFactory;
+export default createShip;
