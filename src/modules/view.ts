@@ -58,7 +58,14 @@ const View = (() => {
     gameboard2.appendChild(computerBoard);
   };
 
-  return { renderPlayerBoard, renderComputerBoard };
+  const renderWinMessage = (message: string) => {
+    const victoryMessage = document.querySelector(
+      ".victory-message"
+    ) as HTMLElement;
+    victoryMessage.innerText = message;
+  };
+
+  return { renderPlayerBoard, renderComputerBoard, renderWinMessage };
 })();
 
 export default View;
