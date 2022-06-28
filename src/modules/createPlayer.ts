@@ -1,5 +1,5 @@
 import createGameboard from "./createGameboard";
-import getCoordinates from "./getCoordinates";
+import { getCoordinates } from "./getCoordinates";
 
 const createPlayer = (name: string) => {
   const gameboard = createGameboard();

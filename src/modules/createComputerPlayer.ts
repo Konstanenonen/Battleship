@@ -1,5 +1,5 @@
 import createPlayer from "./createPlayer";
-import getCoordinates from "./getCoordinates";
+import { getCoordinates, randomShipPlacements } from "./getCoordinates";
 
 const createComputerPlayer = () => {
   let coordinates = getCoordinates();
@@ -13,7 +13,12 @@ const createComputerPlayer = () => {
     return randomCoordinate;
   };
 
-  return { ...createPlayer("Computer"), giveCoordinates };
+  const giveRandomShipPlaces = () => {
+    const index = Math.floor(Math.random() * 3);
+    return randomShipPlacements[index];
+  };
+
+  return { ...createPlayer("Computer"), giveCoordinates, giveRandomShipPlaces };
 };
 
 export default createComputerPlayer;
