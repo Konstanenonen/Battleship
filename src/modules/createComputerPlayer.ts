@@ -2,8 +2,6 @@ import createPlayer from "./createPlayer";
 import getCoordinates from "./getCoordinates";
 
 const createComputerPlayer = () => {
-  const prototype = createPlayer("Computer");
-
   let coordinates = getCoordinates();
 
   const giveCoordinates = () => {
@@ -15,7 +13,7 @@ const createComputerPlayer = () => {
     return randomCoordinate;
   };
 
-  return { ...prototype, giveCoordinates };
+  return { ...createPlayer("Computer"), giveCoordinates };
 };
 
 export default createComputerPlayer;
