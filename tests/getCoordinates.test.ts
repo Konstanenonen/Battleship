@@ -1,5 +1,5 @@
 /* global test expect */
-import getCoordinates from "../src/modules/getCoordinates";
+import { getCoordinates } from "../src/modules/getCoordinates";
 
 test("get Coordinates returns array of all possible coordinates", () => {
   const coordinates = getCoordinates();
