@@ -72,7 +72,7 @@ const createGameboard = () => {
         destroyer.hit(hitPosition);
         break;
       default:
-        break;
+        throw new Error("Bad input in receiveAttack function");
     }
 
     state[y][x] = "hit";
